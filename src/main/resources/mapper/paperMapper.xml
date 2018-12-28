@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pengqi.model.dao.PaperDao">
+	<resultMap id="paperListResultMap" type="pengqi.model.pojo.Paper">
+		<id property="paperId" column="paper_id"/>
+		<result property="paperTitle" column="paper_title"/>
+		<result property="paperRef" column="paper_ref"/>
+		<result property="paperDetail" column="paper_detail"/>
+	</resultMap>
+	<select id="queryAllPaper" resultMap="paperListResultMap">
+		select * from paper;
+	</select>
+
+	<select id="queryPaperByID" resultType="pengqi.model.pojo.Paper">
+		select * from paper where paper_id=#{paperId};
+	</select>
+
+	<delete id="deletePaper" parameterType="int">
+		delete from paper where paper_id=#{paperId};
+	</delete>
+
+	<update id="updatePaper" parameterType="pengqi.model.pojo.Paper">
+		update paper
+		set paper_title=#{paperTitle},paper_ref=#{paperRef},paper_detail=#{paperDetail}
+		where paper_id=#{paperId};
+	</update>
+
+	<!-- #{}中的名称为pojo中的字段名，注意！ -->
+	<update id="addPaper" parameterType="pengqi.model.pojo.Paper">
+		insert into paper(paper_title,paper_ref,paper_detail)
+		value (#{paperTitle},#{paperRef},#{paperDetail});
+	</update>
+</mapper>
