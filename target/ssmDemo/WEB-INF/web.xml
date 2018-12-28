@@ -10,6 +10,12 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
+  <!--&lt;!&ndash; 为访问静态资源的url匹配映射 &ndash;&gt;-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>default</servlet-name>-->
+    <!--<url-pattern>*.png</url-pattern>-->
+  <!--</servlet-mapping>-->
+
   <!-- 配置核心控制器 -->
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
@@ -21,6 +27,7 @@
       <param-value>classpath:spring/spring-*.xml</param-value>
     </init-param>
   </servlet>
+
   <!-- 配置servlet映射 -->
   <servlet-mapping>
     <servlet-name>dispatcherServlet</servlet-name>

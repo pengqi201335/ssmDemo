@@ -21,6 +21,7 @@
     <mvc:resources mapping="/css/**" location="/WEB-INF/statics/css/"/>
     <mvc:resources mapping="/js/**" location="/WEB-INF/statics/js/"/>
     <mvc:resources mapping="/image/**" location="/WEB-INF/statics/image/"/>
+    <!--<mvc:default-servlet-handler/>-->
 
     <!-- 配置视图解析器 -->
     <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

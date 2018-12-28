@@ -13,7 +13,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>首页</title>
+    <title>论文管理系统</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/icon_1.0.png" type="image/x-icon">
     <style type="text/css">
         a {
             text-decoration: none;

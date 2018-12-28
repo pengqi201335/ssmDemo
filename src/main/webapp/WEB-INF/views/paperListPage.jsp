@@ -11,8 +11,8 @@
 <% pageContext.setAttribute("path", request.getContextPath()); %>
 <html>
 <head>
-    <title>论文查询页面</title>
-    <link rel="icon" href="../statics/image/icon_1.0.png" type="image/x-icon">
+    <title>论文查询</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/image/icon_1.0.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
     </div>
     <div class="row">
         <div class="col-md-4 column">
-            <a class="btn btn-primary" href="${path}/paper/toAddPaper">新增</a>
+            <a class="btn btn-primary" href="${path}/paper/toAddPaper">+新增</a>
         </div>
     </div>
     <div class="row clearfix">
