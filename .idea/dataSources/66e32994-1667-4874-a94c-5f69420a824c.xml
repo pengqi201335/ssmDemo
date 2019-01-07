@@ -918,7 +918,8 @@
     <table id="230" parent="4" name="paper">
       <Comment>paper表</Comment>
     </table>
-    <column id="231" parent="230" name="paper_id">
+    <table id="231" parent="4" name="paperManager"/>
+    <column id="232" parent="230" name="paper_id">
       <Position>1</Position>
       <Comment>论文编号</Comment>
       <DataType>int(11)|0s</DataType>
@@ -926,30 +927,54 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="230" name="paper_title">
+    <column id="233" parent="230" name="paper_title">
       <Position>2</Position>
       <Comment>论文标题</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="230" name="paper_ref">
+    <column id="234" parent="230" name="paper_ref">
       <Position>3</Position>
       <Comment>论文被引次数</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="230" name="paper_detail">
+    <column id="235" parent="230" name="paper_detail">
       <Position>4</Position>
       <Comment>论文描述</Comment>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="235" parent="230" name="PRIMARY">
+    <key id="236" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>paper_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="237" parent="231" name="manager_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="238" parent="231" name="manager_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="239" parent="231" name="password">
+      <Position>3</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="240" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>manager_id</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

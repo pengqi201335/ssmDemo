@@ -31,7 +31,29 @@
             background: deepskyblue;
             border-radius: 4px;
         }
+        form {
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+        }
     </style>
+    <script type="text/javascript">
+        var xmlHttp;
+        function check() {
+            var managerName = document.getElementById("managerName").value;
+            var url = "http://localhost:8080/ssmDemo/manager/checkManagerExist/"+managerName;
+
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = checkResult;
+            xmlHttp.open("GET",url,true);
+            xmlHttp.send();
+        }
+        function checkResult() {
+            if(xmlHttp.readyState===4 && xmlHttp.status===200){
+                document.getElementById('checkResult').innerHTML = xmlHttp.responseText;
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -46,8 +68,23 @@
     </div>
 </div>
 <br><br>
-<h3>
-    <a href="${path }/paper/queryAllPapers">点击进入管理页面</a>
-</h3>
+<%--<h3>--%>
+    <%--<a href="${path }/paper/queryAllPapers">点击进入管理页面</a>--%>
+<%--</h3>--%>
+<form id="login" action="${pageContext.request.contextPath}/manager/managerLogin" method="post">
+    <label>
+        <span>管理员账号：</span>
+        <input id="managerName" type="text" name="managerName" onkeyup="check()">
+        <span id="checkResult"></span>
+    </label>
+    <br>
+    <label>
+        <span>登录密码：</span>
+        <input type="password" id="password" name="password">
+    </label>
+    <br>
+    <input id="clickToSubmit" type="submit" value="登录">
+</form>
+
 </body>
 </html>
