@@ -1,7 +1,6 @@
-package pengqi.model.dao;
+package pengqi.dao;
 
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
 import pengqi.model.pojo.Manager;
 
 /**

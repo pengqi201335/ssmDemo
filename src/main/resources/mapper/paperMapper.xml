@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pengqi.model.dao.PaperDao">
+<mapper namespace="pengqi.dao.PaperDao">
 	<resultMap id="paperListResultMap" type="pengqi.model.pojo.Paper">
 		<id property="paperId" column="paper_id"/>
 		<result property="paperTitle" column="paper_title"/>

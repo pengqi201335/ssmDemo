@@ -5,11 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pengqi.model.pojo.Manager;
+import pengqi.model.pojo.Papermanager;
 import pengqi.model.service.ManagerService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * paperManager表的控制器类
@@ -80,5 +82,21 @@ public class ManagerController {
             //输入正确
             out.print("<script language=\"javascript\">alert('登录成功！');window.location.href='/ssmDemo/paper/queryAllPapers'</script>");
         }
+    }
+
+    @RequestMapping(value = "/WebSocketConn")
+    public String jumpToSocketConn(){
+        return "webSocketManagerPage";
+    }
+
+    /**
+     * 测试mybatis逆向工程的控制器
+     * @return 返回信息
+     */
+    @RequestMapping(value = "/generator")
+    @ResponseBody
+    public String generatorTest(){
+        List<Papermanager> papermanagerList = managerService.fuzzyQuery("%ng%");
+        return papermanagerList.get(0).getPassword();
     }
 }

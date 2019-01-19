@@ -35,7 +35,7 @@
         <!-- 注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 扫描dao包下的所有dao类 -->
-        <property name="basePackage" value="pengqi.model.dao"/>
+        <property name="basePackage" value="pengqi.dao"/>
     </bean>
 
 </beans>

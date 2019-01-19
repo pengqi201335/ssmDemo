@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pengqi.model.dao.ManagerDao">
+<mapper namespace="pengqi.dao.ManagerDao">
 	<select id="queryManagerByID" resultType="pengqi.model.pojo.Manager">
 		select * from paperManager where manager_name=#{managerName};
 	</select>

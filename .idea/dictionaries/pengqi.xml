@@ -3,11 +3,17 @@
     <words>
       <w>aliyun</w>
       <w>clearfix</w>
+      <w>hdel</w>
+      <w>hget</w>
+      <w>hkey</w>
+      <w>hset</w>
       <w>inno</w>
       <w>jedis</w>
       <w>jstl</w>
       <w>mchange</w>
       <w>pengqi</w>
+      <w>zadd</w>
+      <w>zget</w>
     </words>
   </dictionary>
 </component>

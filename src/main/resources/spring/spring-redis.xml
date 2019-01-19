@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- JedisPoolConfig配置 -->
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<!-- 一个jedisPool可以分配多少个jedis实例 -->
+		<property name="maxTotal" value="1000"/>
+		<!-- 一个jedisPool最多有多少个空闲的jedis实例 -->
+		<property name="maxIdle" value="200"/>
+		<!-- 当borrow一个jedis实例时，最大的等待时间，超出则直接抛出JedisConnectionException -->
+		<property name="maxWaitMillis" value="2000"/>
+		<!-- 在borrow一个jedis实例之前，是否进行validate操作，如果是，则borrow的每个jedis实例都是可用的 -->
+		<property name="testOnBorrow" value="true"/>
+	</bean>
+
+	<!-- 配置JedisPool -->
+	<bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+		<!-- 通过构造函数配置JedisPool -->
+		<constructor-arg name="poolConfig" ref="jedisPoolConfig"/>
+		<constructor-arg name="host" value="127.0.0.1"/>
+		<constructor-arg name="port" value="6379"/>
+	</bean>
+
+</beans>

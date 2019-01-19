@@ -19,7 +19,7 @@ public class HttpRequestTest {
 
     @Before
     public void setUp() throws Exception {
-        url = "http://localhost:8080/ssmDemo/paper/homePage";
+        url = "http://localhost:8080/ssmDemo/redis/redisTest?paperID=3";
         HttpClientBuilder builder = HttpClientBuilder.create();
         client = builder.build();
     }

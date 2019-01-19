@@ -2,7 +2,7 @@ package pengqi.model.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pengqi.model.dao.PaperDao;
+import pengqi.dao.PaperDao;
 import pengqi.model.pojo.Paper;
 import pengqi.model.service.PaperService;
 

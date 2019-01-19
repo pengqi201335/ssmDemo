@@ -1,4 +1,4 @@
-package pengqi.model.dao;
+package pengqi.dao;
 
 import pengqi.model.pojo.Paper;
 

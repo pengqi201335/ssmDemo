@@ -35,7 +35,7 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
-  <!-- 配置编码集过滤器 -->
+  <!-- 配置编码集过滤器，过滤所有请求，并设置其编码集为UTF-8 -->
   <filter>
     <filter-name>encoding</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
